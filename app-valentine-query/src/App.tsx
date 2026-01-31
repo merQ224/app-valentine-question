@@ -1,27 +1,29 @@
 import './App.css'
 import { useValentineState } from './hooks/useValentineState';
 import { ValentineQuestion } from './components/questionPage/valentineQuestion';
+import { SuccessPage } from './components/successPage/successPage';
 
 /*
 * App: Main application that manages the Valentine's Day question and state.
 */
 
 function App() {
-  const { hasAccepted, yesScale, acceptOnlyChoice, handleNoClick, handleYesClick } = useValentineState();
+  const { hasAccepted, yesScale, acceptOnlyChoice, shouldDodge, handleNoClick, handleYesClick } = useValentineState();
 
   if (hasAccepted) {
-    return <div>Success Page to come</div>
+    return <SuccessPage />;
   }
 
   return (
     <div>
-    <ValentineQuestion
-        yesScale={yesScale}
-        acceptOnlyChoice={acceptOnlyChoice}
-        handleNoClick={handleNoClick}
-        handleYesClick={handleYesClick}
-      />
-      </div>
+      <ValentineQuestion
+          yesScale={yesScale}
+          acceptOnlyChoice={acceptOnlyChoice}
+          shouldDodge={shouldDodge}
+          handleNoClick={handleNoClick}
+          handleYesClick={handleYesClick}
+        />
+    </div>
   );
 }
 

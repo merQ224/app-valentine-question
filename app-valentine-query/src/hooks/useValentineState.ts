@@ -4,6 +4,7 @@ import { useState } from "react";
 * Brains: Hook to manage the state logic for when user interacts with the Valentine buttons.
 */
 const MAX_CLICKS = 5;
+const DODGE = 3;
 const INCREMENT_SCALE = 0.3;
 
 export const useValentineState = () => {
@@ -20,12 +21,14 @@ export const useValentineState = () => {
 
     // Derived states
     const yesScale = 1 + noCount * INCREMENT_SCALE;
+    const shouldDodge = noCount >= DODGE;
     const acceptOnlyChoice = noCount < MAX_CLICKS;
 
     return {
         noCount,
         hasAccepted,
         yesScale,
+        shouldDodge,
         acceptOnlyChoice,
         handleNoClick,
         handleYesClick,
