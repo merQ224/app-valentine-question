@@ -5,8 +5,9 @@ export const SuccessPage = () => {
     return (
         <div className = "success-container">
             <HeartConfetti />
-            <h1>She said YES!</h1>
-            <h3>Happy Valentine's Day ma chérie, see you soon.</h3>
+            <div className="heart-bg">❤️</div>
+            <h1 className="success-text">She said YES!</h1>
+            <h3 className="success-text">Happy Valentine’s Day Ma Chérie 😘 See you soon!</h3>
         </div>
     )
 }

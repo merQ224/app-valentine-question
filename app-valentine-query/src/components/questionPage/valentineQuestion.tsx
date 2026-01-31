@@ -12,7 +12,6 @@ export const ValentineQuestion = ({ yesScale, acceptOnlyChoice, shouldDodge, han
     const moveButtonNo = () => {
         const x = Math.random() * 300 - 150; // This keeps the button within a reasonable horizontal range
         const y = Math.random() * 150 - 75; // This keeps the button within a reasonable vertical range
-        console.log("Button moved to: ", x, y);
         setNoStyle({ transform: `translate(${x}px, ${y}px)` });
     }
     return (
