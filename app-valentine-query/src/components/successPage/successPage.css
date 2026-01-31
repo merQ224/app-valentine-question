@@ -1,0 +1,48 @@
+.success-container {
+    animation: fadeIn 0.75s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heart-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 35rem;
+  color: rgba(255, 105, 180, 0.2);
+  transform: translate(-50%, -50%) rotate(-15deg);
+  z-index: 0;
+  pointer-events: none;
+  animation: heart-pop 1s ease forwards;
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.75;
+  }
+}
+
+.success-text {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  color: white;
+}
