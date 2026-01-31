@@ -30,8 +30,11 @@ export const ValentineQuestion = ({ yesScale, acceptOnlyChoice, shouldDodge, han
                 {acceptOnlyChoice && (
                     <button 
                         className = "no-button" 
-                        onClick={handleNoClick}
-                        onMouseEnter={shouldDodge ? moveButtonNo : undefined}
+                        onMouseMove={shouldDodge ? moveButtonNo : undefined}
+                        onClick={() => {
+                            handleNoClick();
+                            if (shouldDodge) moveButtonNo();
+                        }}
                         style={noStyle}
                         >
                             No
