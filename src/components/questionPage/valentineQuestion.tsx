@@ -10,8 +10,8 @@ export const ValentineQuestion = (request: ValentineQuestionModel) => {
     const [noStyle, setNoStyle] = useState<React.CSSProperties>({});
 
     const moveButtonNo = () => {
-        const x = Math.random() * 300 - 100; // This keeps the button within a reasonable horizontal range
-        const y = Math.random() * 150 - 50; // This keeps the button within a reasonable vertical range
+        const x = Math.random() * 300 - 150; // This keeps the button within a reasonable horizontal range
+        const y = Math.random() * 150 - 75; // This keeps the button within a reasonable vertical range
         setNoStyle({ transform: `translate(${x}px, ${y}px)` });
     }
     return (
