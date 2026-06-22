@@ -1,5 +1,4 @@
 export type ValentineQuestionModel = {
-    noCount: number;
     yesScale: number;
     shouldDodge: boolean;
     acceptOnlyChoice: boolean;

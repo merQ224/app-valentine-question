@@ -40,11 +40,11 @@
     min-width: 100px;
 }
 
-.yes-button:active, .no-button:active {
+.no-button:active {
     transform: scale(0.95);
 }
 
-.yes-button:hover {
+.yes-button:hover, .no-button:hover {
     background-color: #FFF5EE;
     color: #AA336A;
     border: 1px solid #AA336A;
@@ -52,12 +52,6 @@
 
 .no-button {
     position: relative;
-}
-
-.no-button:hover {
-    background-color: #FFF5EE;
-    color: #AA336A;
-    border: 1px solid #AA336A;
 }
 
 @media (max-width: 768px) { /* tablets */

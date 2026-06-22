@@ -8,24 +8,21 @@ import { SuccessPage } from './components/successPage/successPage';
 */
 
 function App() {
-  const { noCount, hasAccepted, yesScale, acceptOnlyChoice, shouldDodge, rejectMsg, handleNoClick, handleYesClick } = useValentineState();
+  const { hasAccepted, yesScale, acceptOnlyChoice, shouldDodge, rejectMsg, handleNoClick, handleYesClick } = useValentineState();
 
   if (hasAccepted) {
     return <SuccessPage />;
   }
 
   return (
-    <div>
-      <ValentineQuestion
-          noCount={noCount}
-          yesScale={yesScale}
-          acceptOnlyChoice={acceptOnlyChoice}
-          shouldDodge={shouldDodge}
-          rejectMsg={rejectMsg}
-          handleNoClick={handleNoClick}
-          handleYesClick={handleYesClick}
-        />
-    </div>
+    <ValentineQuestion
+      yesScale={yesScale}
+      acceptOnlyChoice={acceptOnlyChoice}
+      shouldDodge={shouldDodge}
+      rejectMsg={rejectMsg}
+      handleNoClick={handleNoClick}
+      handleYesClick={handleYesClick}
+    />
   );
 }
 

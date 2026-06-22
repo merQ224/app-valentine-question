@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 /*
 * Brains: Hook to manage the state logic for when user interacts with the Valentine buttons.
@@ -18,13 +18,13 @@ export const useValentineState = () => {
     const [noCount, setNoCount] = useState<number>(0);
     const [hasAccepted, setHasAccepted] = useState<boolean>(false);
 
-    const handleNoClick = () => {
+    const handleNoClick = useCallback(() => {
         setNoCount((prev) => prev + 1);
-    };
+    }, []);
 
-    const handleYesClick = () => {
+    const handleYesClick = useCallback(() => {
         setHasAccepted(true);
-    };
+    }, []);
 
     // Derived states
     const yesScale = 1 + noCount * INCREMENT_SCALE;
@@ -33,7 +33,6 @@ export const useValentineState = () => {
     const rejectMsg = noCount > 0 ? REJECT_MSG[Math.min(noCount - 1, REJECT_MSG.length - 1)] : "";
 
     return {
-        noCount,
         hasAccepted,
         yesScale,
         shouldDodge,
